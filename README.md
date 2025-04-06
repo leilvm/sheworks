@@ -1,5 +1,7 @@
 SheWorks Rwanda
+
 Overview
+
 SheWorks is an innovative platform aimed at bridging the gap between education and employment for women in Rwanda through the tourism sector. The platform helps connect women job seekers with employment opportunities in tourism and related industries. This project was built with the intention of leveraging technology to empower women in Rwanda and contribute to the country's economic growth through sustainable tourism.
 
 How the App Was Created
