@@ -1,98 +1,161 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+SheWorks Rwanda
+Overview
+SheWorks is an innovative platform aimed at bridging the gap between education and employment for women in Rwanda through the tourism sector. The platform helps connect women job seekers with employment opportunities in tourism and related industries. This project was built with the intention of leveraging technology to empower women in Rwanda and contribute to the country's economic growth through sustainable tourism.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+How the App Was Created
+1. Project Setup
+The project was initially set up using create-react-app to quickly set up a React-based frontend. The following steps were taken to configure the application:
 
-## Available Scripts
+Create React App: I used the create-react-app command to initialize the project.
 
-In the project directory, you can run:
+bash
+Copy
+Edit
+npx create-react-app user-app
+Folder Structure: The basic folder structure was configured with separate folders for components, assets, and services.
 
-### `npm start`
+bash
+Copy
+Edit
+/src
+   /components
+   /assets
+   /services
+2. Frontend Development
+The frontend was developed using React to create a responsive and user-friendly interface. Key features include:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Landing Page: The landing page was designed to introduce SheWorks and its mission. This includes sections such as testimonials, a list of partners, and a newsletter signup form.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+React Router: React Router was used for navigation within the app, including pages for job listings, user registration, and contact forms.
 
-### `npm test`
+To set up React Router:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+bash
+Copy
+Edit
+npm install react-router-dom
+State Management: State management was handled using React's built-in state hooks (useState and useEffect). This is used for managing form data, fetching job listings, and handling user interactions.
 
-### `npm run build`
+3. Backend (API Integration)
+For the backend, I integrated APIs that would serve data related to tourism job listings and user registrations:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Node.js and Express: The backend was set up using Node.js with the Express framework. This was used to handle API routes for fetching job data, handling user input, and submitting forms.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+MongoDB: MongoDB was used for data storage, where job listings, user details, and applications are saved.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+APIs for Job Listings: I created APIs that fetch job listings from tourism-related companies and integrate them into the frontend.
 
-### `npm run eject`
+Example API route:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+js
+Copy
+Edit
+app.get('/api/jobs', (req, res) => {
+  Job.find({}, (err, jobs) => {
+    if (err) {
+      res.status(500).send('Error retrieving job listings');
+    }
+    res.json(jobs);
+  });
+});
+4. Deployment
+Frontend Deployment: The React app was deployed on Vercel to ensure it is accessible globally. For the frontend, I used Vercel's integration with GitHub for Continuous Deployment.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Steps to deploy on Vercel:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Push the code to a GitHub repository.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Connect the GitHub repository to Vercel through the Vercel dashboard.
 
-## Learn More
+Configure the deployment settings (set the build command to npm run build and output directory to build).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Backend Deployment: The backend was deployed using Heroku. I set up the environment, installed necessary dependencies (express, mongoose, etc.), and configured the app for production deployment.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Heroku Deployment: After setting up the backend, the app was deployed using Heroku’s Git integration:
 
-### Code Splitting
+bash
+Copy
+Edit
+git push heroku master
+Domain Name: For the production environment, I set up a custom domain (sheworks-one.vercel.app) through Vercel to make the app accessible via a real URL.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Configured the "homepage" field in package.json to the Vercel URL.
 
-### Analyzing the Bundle Size
+Example:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+json
+Copy
+Edit
+"homepage": "https://sheworks-one.vercel.app"
+5. Ethical Considerations
+The app was designed with ethical considerations in mind, focusing on the empowerment of women and the promotion of inclusive employment opportunities. Some key considerations:
 
-### Making a Progressive Web App
+Data Privacy: Ensured that users' personal data is handled securely, following best practices for storing and managing sensitive information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Inclusivity: The app was developed with inclusivity in mind, ensuring that women from various socio-economic backgrounds could access the platform.
 
-### Advanced Configuration
+Sustainability: The use of tourism as a key sector was chosen for its potential to contribute to sustainable economic development, providing long-term employment opportunities in the region.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+6. Technologies Used
+Frontend:
 
-### Deployment
+React.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+React Router
 
-### `npm run build` fails to minify
+CSS3 and HTML5
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-She Works Rwanda is a digital platform dedicated to empowering Rwandan women by providing resources, networking opportunities, and career development tools. The platform aims to bridge the gender gap in the workforce by fostering skill-building, mentorship, and job placement.
+Axios (for API requests)
 
-Features
-User Authentication with Multifactor Authentication (MFA)
+Backend:
 
-Job Listings & Applications – Browse and apply for job opportunities.
+Node.js
 
-Mentorship Matching – Connect with experienced professionals for guidance.
+Express.js
 
-Skill Development – Access online courses and training materials.
+MongoDB (database)
 
-Community Networking – Engage with other women through forums and events.
+Deployment:
 
-Real-Time Updates & Notifications – Stay informed about opportunities and platform activities.
+Vercel (for frontend deployment)
 
-Secure Data Storage – User data is protected using MongoDB Atlas.
+Heroku (for backend deployment)
 
-Tech Stack
-Frontend: React.js, Tailwind CSS & SCSS (Hosted on Vercel)
+7. Challenges and Lessons Learned
+Integration of APIs: One of the biggest challenges was integrating the frontend with the backend APIs, especially in ensuring the data flow was smooth and consistent across both.
 
-Backend: Node.js, Express.js (Hosted on Render)
+Routing Issues: Handling client-side routing on Vercel required some additional configuration to ensure that React Router worked properly with the static deployment.
 
-Database: MongoDB (MongoDB Atlas)
+Security: Implementing secure data management and user authentication was another challenge, but it was crucial for maintaining user privacy and trust.
 
-Authentication: Multifactor Authentication (MFA)
->>>>>>> dff0772ed4030ad777a4d489bcc4c295f742e4da
+8. Future Work
+User Authentication: I plan to add user authentication (sign-up/sign-in functionality) using JWT tokens to secure access to the platform.
+
+Job Application Process: Implementing the ability for users to apply directly to job listings through the app, with email notifications sent to employers.
+
+Expand Job Listings: I intend to expand the job listings by collaborating with more tourism businesses in Rwanda.
+
+Getting Started
+To run the app locally, follow these steps:
+
+Clone the repository:
+
+bash
+Copy
+Edit
+git clone https://github.com/leilvm/sheworks.git
+Install the required dependencies:
+
+bash
+Copy
+Edit
+cd user-app
+npm install
+Start the development server:
+
+bash
+Copy
+Edit
+npm start
+The app will be available at http://localhost:3000.
+
